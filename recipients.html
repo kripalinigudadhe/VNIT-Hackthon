@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipients Management - FoodForHope AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>FoodForHope<span>AI</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="recipients.html" class="active">Recipients</a></li>
+                    <li><a href="volunteers.html">Volunteers</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="/placeholder.svg?height=40&width=40" alt="User profile" class="avatar">
+                <span>Admin User</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                    </li>
+                    <li>
+                        <a href="donations.html"><i class="fas fa-box"></i> Donations</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-truck"></i> Deliveries</a>
+                    </li>
+                    <li>
+                        <a href="volunteers.html"><i class="fas fa-users"></i> Volunteers</a>
+                    </li>
+                    <li class="active">
+                        <a href="recipients.html"><i class="fas fa-hands-helping"></i> Recipients</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Recipients Management</h1>
+                <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Recipient</button>
+            </div>
+
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search recipients...">
+                </div>
+                <div class="filter-options">
+                    <select>
+                        <option>All Types</option>
+                        <option>Individuals</option>
+                        <option>Families</option>
+                        <option>Shelters</option>
+                        <option>Community Centers</option>
+                        <option>Schools</option>
+                        <option>Senior Centers</option>
+                    </select>
+                    <select>
+                        <option>All Locations</option>
+                        <option>North District</option>
+                        <option>South District</option>
+                        <option>East District</option>
+                        <option>West District</option>
+                        <option>Central</option>
+                    </select>
+                    <select>
+                        <option>All Statuses</option>
+                        <option>Active</option>
+                        <option>Pending</option>
+                        <option>Inactive</option>
+                    </select>
+                    <button class="btn btn-outline-secondary"><i class="fas fa-filter"></i> More Filters</button>
+                </div>
+            </div>
+
+            <div class="recipient-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,245</h3>
+                        <p>Total Recipients</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>28</h3>
+                        <p>New This Month</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>3,890</h3>
+                        <p>Meals Distributed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>42</h3>
+                        <p>Service Areas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-tables">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Recipient Organizations</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-outline-secondary"><i class="fas fa-download"></i> Export</button>
+                            <select>
+                                <option>10 per page</option>
+                                <option>25 per page</option>
+                                <option>50 per page</option>
+                                <option>100 per page</option>
+                            </select>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="select-all">
+                                </th>
+                                <th>Organization <i class="fas fa-sort"></i></th>
+                                <th>Type <i class="fas fa-sort"></i></th>
+                                <th>Location <i class="fas fa-sort"></i></th>
+                                <th>People Served <i class="fas fa-sort"></i></th>
+                                <th>Dietary Needs <i class="fas fa-sort"></i></th>
+                                <th>Last Delivery <i class="fas fa-sort"></i></th>
+                                <th>Status <i class="fas fa-sort"></i></th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>Community Center</td>
+                                <td>Community Center</td>
+                                <td>North District</td>
+                                <td>120</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Vegetarian</span>
+                                        <span class="tag">Halal</span>
+                                    </div>
+                                </td>
+                                <td>May 15, 2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-truck"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>Hope Shelter</td>
+                                <td>Shelter</td>
+                                <td>Central</td>
+                                <td>85</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Gluten-Free</span>
+                                    </div>
+                                </td>
+                                <td>May 14, 2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-truck"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>Senior Center</td>
+                                <td>Senior Center</td>
+                                <td>East District</td>
+                                <td>65</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Low-Sodium</span>
+                                        <span class="tag">Soft Foods</span>
+                                    </div>
+                                </td>
+                                <td>May 13, 2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-truck"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>Family Support</td>
+                                <td>Community Center</td>
+                                <td>South District</td>
+                                <td>210</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Kosher</span>
+                                        <span class="tag">Nut-Free</span>
+                                    </div>
+                                </td>
+                                <td>May 12, 2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-truck"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>Youth Program</td>
+                                <td>School</td>
+                                <td>West District</td>
+                                <td>150</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Dairy-Free</span>
+                                    </div>
+                                </td>
+                                <td>May 11, 2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-truck"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <button class="btn-icon" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number">3</button>
+                        <span>...</span>
+                        <button class="page-number">8</button>
+                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-section">
+                <div class="ai-header">
+                    <h3><i class="fas fa-robot"></i> AI-Powered Recipient Matching</h3>
+                    <button class="btn btn-outline-secondary">View Matching History</button>
+                </div>
+                <div class="ai-content">
+                    <div class="ai-card">
+                        <div class="ai-card-header">
+                            <h4>Recommended Distributions</h4>
+                            <span class="timestamp">Updated 15 minutes ago</span>
+                        </div>
+                        <div class="ai-card-body">
+                            <div class="matching-item">
+                                <div class="matching-details">
+                                    <div class="matching-source">
+                                        <h5>Fresh Produce (120kg)</h5>
+                                        <p>From: Local Grocery</p>
+                                        <p>Received: Today</p>
+                                        <p>Expires in: 3 days</p>
+                                    </div>
+                                    <div class="matching-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                    <div class="matching-destination">
+                                        <h5>Recommended Recipients:</h5>
+                                        <ul>
+                                            <li>
+                                                <span class="recipient-name">Community Center</span>
+                                                <span class="allocation">60kg</span>
+                                                <span class="match-score">98% match</span>
+                                            </li>
+                                            <li>
+                                                <span class="recipient-name">Family Support</span>
+                                                <span class="allocation">40kg</span>
+                                                <span class="match-score">95% match</span>
+                                            </li>
+                                            <li>
+                                                <span class="recipient-name">Youth Program</span>
+                                                <span class="allocation">20kg</span>
+                                                <span class="match-score">92% match</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="matching-actions">
+                                    <button class="btn btn-primary">Accept Recommendations</button>
+                                    <button class="btn btn-outline-secondary">Modify</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-widget">
+                <h3>Recipient Insights</h3>
+                <div class="chart-container">
+                    <h4>Recipients by Type</h4>
+                    <div class="chart-placeholder">
+                        <img src="/placeholder.svg?height=180&width=220" alt="Recipients by type">
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h4>Dietary Needs Distribution</h4>
+                    <div class="chart-placeholder">
+                        <img src="/placeholder.svg?height=180&width=220" alt="Dietary needs distribution">
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Recipient Feedback</h3>
+                <div class="feedback-item">
+                    <div class="feedback-header">
+                        <span class="feedback-source">Community Center</span>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="feedback-text">"The fresh produce was excellent quality. Our community members were very appreciative of the variety."</p>
+                    <span class="feedback-date">May 12, 2025</span>
+                </div>
+                <div class="feedback-item">
+                    <div class="feedback-header">
+                        <span class="feedback-source">Senior Center</span>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="feedback-text">"Thank you for considering our dietary needs. The soft food options were perfect for our seniors."</p>
+                    <span class="feedback-date">May 10, 2025</span>
+                </div>
+                <a href="#" class="view-all">View All Feedback</a>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Select all checkbox functionality
+        document.getElementById('select-all').addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.row-select');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+    </script>
+</body>
+</html>

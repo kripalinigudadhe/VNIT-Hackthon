@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Management - FoodForHope AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>FoodForHope<span>AI</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="recipients.html">Recipients</a></li>
+                    <li><a href="volunteers.html" class="active">Volunteers</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="/placeholder.svg?height=40&width=40" alt="User profile" class="avatar">
+                <span>Admin User</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                    </li>
+                    <li>
+                        <a href="donations.html"><i class="fas fa-box"></i> Donations</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-truck"></i> Deliveries</a>
+                    </li>
+                    <li class="active">
+                        <a href="volunteers.html"><i class="fas fa-users"></i> Volunteers</a>
+                    </li>
+                    <li>
+                        <a href="recipients.html"><i class="fas fa-hands-helping"></i> Recipients</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Volunteer Management</h1>
+                <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Volunteer</button>
+            </div>
+
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search volunteers...">
+                </div>
+                <div class="filter-options">
+                    <select>
+                        <option>All Roles</option>
+                        <option>Drivers</option>
+                        <option>Food Sorters</option>
+                        <option>Quality Assessors</option>
+                        <option>Coordinators</option>
+                        <option>Admin</option>
+                    </select>
+                    <select>
+                        <option>All Availability</option>
+                        <option>Weekdays</option>
+                        <option>Weekends</option>
+                        <option>Mornings</option>
+                        <option>Afternoons</option>
+                        <option>Evenings</option>
+                    </select>
+                    <select>
+                        <option>All Statuses</option>
+                        <option>Active</option>
+                        <option>On Leave</option>
+                        <option>Inactive</option>
+                    </select>
+                    <button class="btn btn-outline-secondary"><i class="fas fa-filter"></i> More Filters</button>
+                </div>
+            </div>
+
+            <div class="volunteer-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>245</h3>
+                        <p>Total Volunteers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,280</h3>
+                        <p>Hours This Month</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>85</h3>
+                        <p>Active Drivers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>New This Week</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-tables">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Volunteer Directory</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-outline-secondary"><i class="fas fa-download"></i> Export</button>
+                            <select>
+                                <option>10 per page</option>
+                                <option>25 per page</option>
+                                <option>50 per page</option>
+                                <option>100 per page</option>
+                            </select>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="select-all">
+                                </th>
+                                <th>Name <i class="fas fa-sort"></i></th>
+                                <th>Role <i class="fas fa-sort"></i></th>
+                                <th>Skills <i class="fas fa-sort"></i></th>
+                                <th>Availability <i class="fas fa-sort"></i></th>
+                                <th>Hours <i class="fas fa-sort"></i></th>
+                                <th>Last Active <i class="fas fa-sort"></i></th>
+                                <th>Status <i class="fas fa-sort"></i></th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>
+                                    <div class="volunteer-info">
+                                        <img src="/placeholder.svg?height=40&width=40" alt="John Smith" class="avatar">
+                                        <div>
+                                            <div class="volunteer-name">John Smith</div>
+                                            <div class="volunteer-email">john.smith@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Driver</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Delivery</span>
+                                        <span class="tag">Loading</span>
+                                    </div>
+                                </td>
+                                <td>Weekdays, Afternoons</td>
+                                <td>42 hrs</td>
+                                <td>Today</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-calendar-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>
+                                    <div class="volunteer-info">
+                                        <img src="/placeholder.svg?height=40&width=40" alt="Maria Garcia" class="avatar">
+                                        <div>
+                                            <div class="volunteer-name">Maria Garcia</div>
+                                            <div class="volunteer-email">maria.g@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Food Sorter</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Sorting</span>
+                                        <span class="tag">Quality Check</span>
+                                    </div>
+                                </td>
+                                <td>Weekends, Mornings</td>
+                                <td>18 hrs</td>
+                                <td>Yesterday</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-calendar-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>
+                                    <div class="volunteer-info">
+                                        <img src="/placeholder.svg?height=40&width=40" alt="David Lee" class="avatar">
+                                        <div>
+                                            <div class="volunteer-name">David Lee</div>
+                                            <div class="volunteer-email">david.lee@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Coordinator</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Scheduling</span>
+                                        <span class="tag">Training</span>
+                                        <span class="tag">Admin</span>
+                                    </div>
+                                </td>
+                                <td>Weekdays, Full Day</td>
+                                <td>35 hrs</td>
+                                <td>Today</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-calendar-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>
+                                    <div class="volunteer-info">
+                                        <img src="/placeholder.svg?height=40&width=40" alt="Sarah Johnson" class="avatar">
+                                        <div>
+                                            <div class="volunteer-name">Sarah Johnson</div>
+                                            <div class="volunteer-email">sarah.j@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Driver</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Delivery</span>
+                                    </div>
+                                </td>
+                                <td>Weekdays, Evenings</td>
+                                <td>22 hrs</td>
+                                <td>2 days ago</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-calendar-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="row-select">
+                                </td>
+                                <td>
+                                    <div class="volunteer-info">
+                                        <img src="/placeholder.svg?height=40&width=40" alt="Michael Brown" class="avatar">
+                                        <div>
+                                            <div class="volunteer-name">Michael Brown</div>
+                                            <div class="volunteer-email">michael.b@example.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Quality Assessor</td>
+                                <td>
+                                    <div class="tags">
+                                        <span class="tag">Food Safety</span>
+                                        <span class="tag">Quality Check</span>
+                                    </div>
+                                </td>
+                                <td>Weekends, Afternoons</td>
+                                <td>16 hrs</td>
+                                <td>3 days ago</td>
+                                <td><span class="status on-leave">On Leave</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-calendar-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <button class="btn-icon" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number">3</button>
+                        <span>...</span>
+                        <button class="page-number">10</button>
+                        <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-calendar-alt"></i> AI-Optimized Volunteer Schedule</h3>
+                    <div class="schedule-actions">
+                        <button class="btn btn-outline-secondary"><i class="fas fa-sync-alt"></i> Regenerate</button>
+                        <button class="btn btn-outline-secondary"><i class="fas fa-download"></i> Export</button>
+                    </div>
+                </div>
+                <div class="schedule-container">
+                    <div class="schedule-filters">
+                        <div class="date-navigation">
+                            <button class="btn-icon"><i class="fas fa-chevron-left"></i></button>
+                            <h4>Week of May 15 - May 21, 2025</h4>
+                            <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="view-options">
+                            <button class="view-option active">Day</button>
+                            <button class="view-option">Week</button>
+                            <button class="view-option">Month</button>
+                        </div>
+                    </div>
+                    <div class="schedule-grid">
+                        <div class="time-column">
+                            <div class="time-header">Time</div>
+                            <div class="time-slot">8:00 AM</div>
+                            <div class="time-slot">9:00 AM</div>
+                            <div class="time-slot">10:00 AM</div>
+                            <div class="time-slot">11:00 AM</div>
+                            <div class="time-slot">12:00 PM</div>
+                            <div class="time-slot">1:00 PM</div>
+                            <div class="time-slot">2:00 PM</div>
+                            <div class="time-slot">3:00 PM</div>
+                            <div class="time-slot">4:00 PM</div>
+                            <div class="time-slot">5:00 PM</div>
+                            <div class="time-slot">6:00 PM</div>
+                        </div>
+                        <div class="day-column">
+                            <div class="day-header">Monday, May 15</div>
+                            <div class="schedule-content">
+                                <div class="schedule-event" style="top: 60px; height: 120px; background-color: #c2a372;">
+                                    <div class="event-title">Food Sorting</div>
+                                    <div class="event-details">
+                                        <div class="event-time">9:00 AM - 11:00 AM</div>
+                                        <div class="event-volunteers">5 volunteers</div>
+                                    </div>
+                                </div>
+                                <div class="schedule-event" style="top: 240px; height: 120px; background-color: #6e4537;">
+                                    <div class="event-title">Delivery Run</div>
+                                    <div class="event-details">
+                                        <div class="event-time">12:00 PM - 2:00 PM</div>
+                                        <div class="event-volunteers">3 drivers</div>
+                                    </div>
+                                </div>
+                                <div class="schedule-event" style="top: 420px; height: 120px; background-color: #c2a372;">
+                                    <div class="event-title">Quality Assessment</div>
+                                    <div class="event-details">
+                                        <div class="event-time">3:00 PM - 5:00 PM</div>
+                                        <div class="event-volunteers">2 assessors</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-widget">
+                <h3>Volunteer Insights</h3>
+                <div class="chart-container">
+                    <h4>Volunteers by Role</h4>
+                    <div class="chart-placeholder">
+                        <img src="/placeholder.svg?height=180&width=220" alt="Volunteers by role">
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h4>Volunteer Hours Trend</h4>
+                    <div class="chart-placeholder">
+                        <img src="/placeholder.svg?height=180&width=220" alt="Volunteer hours trend">
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Volunteer Needs</h3>
+                <div class="needs-item urgent">
+                    <div class="needs-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="needs-details">
+                        <h4>Urgent: Drivers Needed</h4>
+                        <p>Thursday, May 18, 2:00 PM - 5:00 PM</p>
+                        <p>3 drivers needed for delivery routes</p>
+                    </div>
+                    <button class="btn btn-sm btn-primary">Find Volunteers</button>
+                </div>
+                <div class="needs-item">
+                    <div class="needs-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="needs-details">
+                        <h4>Food Sorters</h4>
+                        <p>Saturday, May 20, 9:00 AM - 12:00 PM</p>
+                        <p>4 sorters needed for large donation</p>
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary">Find Volunteers</button>
+                </div>
+                <div class="needs-item">
+                    <div class="needs-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="needs-details">
+                        <h4>Quality Assessors</h4>
+                        <p>Friday, May 19, 1:00 PM - 3:00 PM</p>
+                        <p>2 assessors needed for produce inspection</p>
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary">Find Volunteers</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Select all checkbox functionality
+        document.getElementById('select-all').addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.row-select');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+    </script>
+</body>
+</html>

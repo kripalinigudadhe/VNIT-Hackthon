@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FoodForHope AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>FoodForHope<span>AI</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="recipients.html">Recipients</a></li>
+                    <li><a href="volunteers.html">Volunteers</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="/placeholder.svg?height=40&width=40" alt="User profile" class="avatar">
+                <span>Admin User</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#"><i class="fas fa-tachometer-alt"></i> Overview</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-box"></i> Inventory</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-truck"></i> Deliveries</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-users"></i> Volunteers</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-hands-helping"></i> Recipients</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Dashboard Overview</h1>
+                <div class="date-filter">
+                    <label for="date-range">Time Period:</label>
+                    <select id="date-range">
+                        <option>Today</option>
+                        <option>This Week</option>
+                        <option selected>This Month</option>
+                        <option>This Quarter</option>
+                        <option>This Year</option>
+                        <option>Custom Range</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,245 kg</h3>
+                        <p>Food Collected</p>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 12%
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>3,890</h3>
+                        <p>Meals Distributed</p>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 8%
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>245</h3>
+                        <p>Active Volunteers</p>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 5%
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2.5%</h3>
+                        <p>Food Waste</p>
+                    </div>
+                    <div class="stat-change negative">
+                        <i class="fas fa-arrow-down"></i> 15%
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-charts">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Food Distribution by Category</h3>
+                        <div class="chart-actions">
+                            <button class="btn-icon"><i class="fas fa-download"></i></button>
+                            <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                        </div>
+                    </div>
+                    <div class="chart-placeholder">
+                        <img src="https://cookforgood.com/wp-content/uploads/2017/05/wasted-food-categories-pie-chart-600x600.jpg"height=250 width=500 alt="Food distribution chart">
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Monthly Activity</h3>
+                        <div class="chart-actions">
+                            <button class="btn-icon"><i class="fas fa-download"></i></button>
+                            <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                        </div>
+                    </div>
+                    <div class="chart-placeholder">
+                        <img src="https://www.exceldashboardtemplates.com/wp-content/uploads/2014/10/Food-Donation-Excel-Chart.png" height=250 width=500 alt="Monthly activity chart">
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-tables">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Recent Donations</h3>
+                        <a href="donations.html" class="view-all">View All</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Donor</th>
+                                <th>Food Type</th>
+                                <th>Quantity</th>
+                                <th>Quality Score</th>
+                                <th>Expiry</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Local Grocery</td>
+                                <td>Fresh Produce</td>
+                                <td>120 kg</td>
+                                <td>95%</td>
+                                <td>3 days</td>
+                                <td><span class="status processing">Processing</span></td>
+                            </tr>
+                            <tr>
+                                <td>City Bakery</td>
+                                <td>Bread & Pastries</td>
+                                <td>45 kg</td>
+                                <td>98%</td>
+                                <td>2 days</td>
+                                <td><span class="status distributed">Distributed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Farm Fresh Co-op</td>
+                                <td>Vegetables</td>
+                                <td>85 kg</td>
+                                <td>92%</td>
+                                <td>5 days</td>
+                                <td><span class="status processing">Processing</span></td>
+                            </tr>
+                            <tr>
+                                <td>Metro Supermarket</td>
+                                <td>Canned Goods</td>
+                                <td>200 kg</td>
+                                <td>100%</td>
+                                <td>180 days</td>
+                                <td><span class="status stored">Stored</span></td>
+                            </tr>
+                            <tr>
+                                <td>Daily Dairy</td>
+                                <td>Milk & Cheese</td>
+                                <td>65 kg</td>
+                                <td>97%</td>
+                                <td>7 days</td>
+                                <td><span class="status distributed">Distributed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dashboard-tables">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Upcoming Deliveries</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Recipient</th>
+                                <th>Food Package</th>
+                                <th>Delivery Date</th>
+                                <th>Volunteer</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Community Center</td>
+                                <td>Mixed Essentials</td>
+                                <td>Today, 2:00 PM</td>
+                                <td>John Smith</td>
+                                <td><span class="status scheduled">Scheduled</span></td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Hope Shelter</td>
+                                <td>Fresh Produce</td>
+                                <td>Today, 4:30 PM</td>
+                                <td>Maria Garcia</td>
+                                <td><span class="status in-transit">In Transit</span></td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Senior Center</td>
+                                <td>Ready Meals</td>
+                                <td>Tomorrow, 9:00 AM</td>
+                                <td>David Lee</td>
+                                <td><span class="status scheduled">Scheduled</span></td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Family Support</td>
+                                <td>Pantry Staples</td>
+                                <td>Tomorrow, 1:00 PM</td>
+                                <td>Sarah Johnson</td>
+                                <td><span class="status scheduled">Scheduled</span></td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Youth Program</td>
+                                <td>Snacks & Fruits</td>
+                                <td>Tomorrow, 3:30 PM</td>
+                                <td>Michael Brown</td>
+                                <td><span class="status scheduled">Scheduled</span></td>
+                                <td>
+                                    <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-widget">
+                <h3>AI Insights</h3>
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="insight-content">
+                        <p>Predicted 15% increase in vegetable donations next week based on seasonal patterns.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="insight-content">
+                        <p>Volunteer shortage detected for Thursday afternoon shifts.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="insight-content">
+                        <p>Dairy products approaching expiry - prioritize for tomorrow's distribution.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Upcoming Tasks</h3>
+                <ul class="task-list">
+                    <li>
+                        <input type="checkbox" id="task1">
+                        <label for="task1">Review quality assessment for Farm Fresh delivery</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="task2">
+                        <label for="task2">Confirm volunteer schedule for weekend</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="task3">
+                        <label for="task3">Update recipient dietary restrictions database</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="task4">
+                        <label for="task4">Coordinate with new restaurant donor</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="task5">
+                        <label for="task5">Generate monthly impact report</label>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

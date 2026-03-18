@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Become a Volunteer - FoodShare AI</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-card">
+            <h2>Become a Volunteer</h2>
+            <form action="dashboard.html" method="POST">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="input-group">
+                    <label for="role">Preferred Role</label>
+                    <select id="role" name="role" required>
+                        <option value="Driver">Driver</option>
+                        <option value="Food Sorter">Food Sorter</option>
+                        <option value="Quality Assessor">Quality Assessor</option>
+                        <option value="Coordinator">Coordinator</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="availability">Availability</label>
+                    <select id="availability" name="availability" required>
+                        <option value="Weekdays">Weekdays</option>
+                        <option value="Weekends">Weekends</option>
+                        <option value="Mornings">Mornings</option>
+                        <option value="Afternoons">Afternoons</option>
+                        <option value="Evenings">Evenings</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
